@@ -23,10 +23,7 @@ const convertPokemonToItem = (pokemon) => {
 
 const pokemonList = document.getElementById('pokemonList');
 
-pokeApi.getAllPokemons(offset, limit).then((pokemons) => {
-    for (let i = 0; i < pokemons.length; i++) {
-        const pokemon = pokemons[i];
-        pokemonList.innerHTML += convertPokemonToItem(pokemon);
-    }
+pokeApi.getAllPokemons().then((pokemons = []) => {  
+    pokemonList.innerHTML += pokemons.map(convertPokemonToItem).join('');
 })
    
