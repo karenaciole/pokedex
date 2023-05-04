@@ -24,6 +24,6 @@ const convertPokemonToItem = (pokemon) => {
 const pokemonList = document.getElementById('pokemonList');
 
 pokeApi.getAllPokemons().then((pokemons = []) => {  
-    pokemonList.innerHTML += pokemons.map(convertPokemonToItem).join('');
+    pokemonList.innerHTML += pokemons.map(convertPokemonToItem).join(''); // mapeia o array de pokemons e converte para string
 })
    

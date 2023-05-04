@@ -1,9 +1,22 @@
 const pokeApi = {}
 
-pokeApi.getAllPokemons = async (offset=0, limit=10) => {
+
+
+pokeApi.getPokemonDetails = async (pokemon) => {
+    return (await fetch(pokemon.url)).json();
+}
+
+pokeApi.getAllPokemons = async (offset=0, limit=5) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
-    return fetch(url).then((response) => response.json())
+    return await fetch(url)
+        .then((response) => response.json())
         .then((data) => data.results)
-        .catch((error) => console.log(error));
-}
+        .then((pokemons) => pokemons.map(pokeApi.getPokemonDetails))
+        .then((requests) => Promise.all(requests)) 
+        .then((pokemonDetails) => {
+            debugger
+            console.log(pokemonDetails)
+        })
+} 
+
