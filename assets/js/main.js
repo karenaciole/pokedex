@@ -6,7 +6,7 @@ const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 const convertPokemonToItem = (pokemon) => {
     return `
         <li class="pokemon">
-            <span class="id">#001</span>
+            <span class="id">#${pokemon.order}</span>
             <span class="name">${pokemon.name}</span>
             
             <div class="detail">
