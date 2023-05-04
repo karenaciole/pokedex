@@ -3,7 +3,11 @@ const offset = 0;
 const limit = 10;
 const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
-const convertPokemonToItem = (pokemon) => {
+const convertPokemonTypesToList = (pokemonTypes) => {
+    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`) 
+}
+
+const convertPokemonToList = (pokemon) => {
     return `
         <li class="pokemon">
             <span class="id">#${pokemon.order}</span>
@@ -11,8 +15,7 @@ const convertPokemonToItem = (pokemon) => {
             
             <div class="detail">
                 <ol class="types">
-                    <li class="type">grass</li>
-                    <li class="type">poison</li>
+                   ${convertPokemonTypesToList(pokemon.types).join('')}
                 </ol>
                 
                 <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
@@ -24,6 +27,6 @@ const convertPokemonToItem = (pokemon) => {
 const pokemonList = document.getElementById('pokemonList');
 
 pokeApi.getAllPokemons().then((pokemons = []) => {  
-    pokemonList.innerHTML += pokemons.map(convertPokemonToItem).join(''); // mapeia o array de pokemons e converte para string
+    pokemonList.innerHTML += pokemons.map(convertPokemonToList).join(''); // mapeia o array de pokemons e converte para string
 })
    
