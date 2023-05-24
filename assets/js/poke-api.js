@@ -9,8 +9,9 @@ const convertPokeApiDetailToPokemon = (pokemonDetail) => {
     const types = pokemonDetail.types.map((typeSlot) => typeSlot.type.name);
     const [type] = types; 
 
-    pokemon.primaryType = type;
-    pokemon.types = types; 
+    pokemon.types = types;
+    pokemon.type = type;
+    
     
     pokemon.image = pokemonDetail.sprites.other.dream_world.front_default;
 
@@ -25,7 +26,7 @@ pokeApi.getPokemonDetails = async (pokemon) => {
     
 }
 
-pokeApi.getAllPokemons = async (offset=0, limit=5) => {
+pokeApi.getAllPokemons = async (offset=0, limit=20) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
     const response = await fetch(url);
