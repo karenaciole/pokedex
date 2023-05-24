@@ -86,6 +86,11 @@
     padding: 1rem;
     border-radius: 1rem;
     color: #fff;
+    transition: transform .2s;
+}
+
+.pokemon:hover {
+    transform: scale(1.1);
 }
 
 .pokemon .id {
@@ -124,6 +129,7 @@
     border-radius: 1rem;
 }
 
+
 .pokemon .detail img { 
     width: 100%;
     height: 70px;
@@ -144,6 +150,7 @@
     border: none;
     border-radius: 1rem;
     padding: 1rem;
+    cursor: pointer;
 }
 
 
