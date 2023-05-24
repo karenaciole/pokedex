@@ -1,9 +1,7 @@
-
-const offset = 0;
-const limit = 10;
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-
-
+const pokemonList = document.getElementById('pokemonList');
+const moreButton = document.getElementById('moreButton');
+const limit = 5;
+let offset = 0;
 
 const convertPokemonToList = (pokemon) => {
     return `
@@ -22,9 +20,15 @@ const convertPokemonToList = (pokemon) => {
     `
 }
 
-const pokemonList = document.getElementById('pokemonList');
+const loadMorePokemons = (offset, limit) => {
+    pokeApi.getAllPokemons(offset, limit).then((pokemons = []) => {
+        pokemonList.innerHTML += pokemons.map(convertPokemonToList).join('');
+    });
+}
 
-pokeApi.getAllPokemons().then((pokemons = []) => {  
-    pokemonList.innerHTML += pokemons.map(convertPokemonToList).join(''); // mapeia o array de pokemons e converte para string
-})
-   
+loadMorePokemons(offset, limit);
+
+moreButton.addEventListener('click', () => {
+    offset+=limit;
+    loadMorePokemons(offset, limit);
+});

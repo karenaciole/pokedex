@@ -139,7 +139,8 @@
 
 .pagination button {
     background-color: rgb(6, 201, 103);
-    color: #fff;
+    color: #121212;
+    opacity: 0.87;
     border: none;
     border-radius: 1rem;
     padding: 1rem;
