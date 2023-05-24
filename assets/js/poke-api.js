@@ -26,7 +26,7 @@ pokeApi.getPokemonDetails = async (pokemon) => {
     
 }
 
-pokeApi.getAllPokemons = async (offset=0, limit=20) => {
+pokeApi.getAllPokemons = async (offset=0, limit=5) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
     const response = await fetch(url);

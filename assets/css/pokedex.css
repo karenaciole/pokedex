@@ -129,6 +129,23 @@
     height: 70px;
 }
 
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.pagination button {
+    background-color: rgb(6, 201, 103);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+
 @media screen and (min-width: 992px) {
     .content {
         max-width: 992px;
