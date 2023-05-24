@@ -6,13 +6,52 @@
     margin: 0;
 }
 
+.water {
+    background-color: #456dc9;
+  }
+  
+.fire {
+    background-color: #c94545;
+  }
+  
+.grass {
+    background-color: #6ec945;
+  }
+  
+.electric {
+    background-color: #c9b345;
+  }
+  
+.psychic {
+    background-color: #c945a8;
+  }
+  
+.ground {
+    background-color: #9c7145;
+  }
+  
+.rock {
+    background-color: #7d7d7d;
+  }
+  
+.flying {
+    background-color: #45c9c1;
+  }
+  
+.bug {
+    background-color: #7dc945;
+  }
+  
+.fighting {
+    background-color: #c97d45;
+  }
+  
 .pokemon {
     display: flex;
     flex-direction: column;
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: #45c9aa;
     color: #fff;
 }
 
@@ -42,7 +81,6 @@
 }
 
 .pokemon .detail .types .type {
-    background-color: #61e1ca;
     padding: .25rem .5rem;
     margin: .25rem 0;
     color: #333;
