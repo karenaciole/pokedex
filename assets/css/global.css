@@ -15,13 +15,31 @@ body {
     
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
 
-.content h1 {
+.title h1 {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
-    color: #fff;
+    color: #ff5722;
+    background: linear-gradient(to right, #ff4800 0%, #c92f32 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
     opacity: 0.87;
     margin: 1rem;
 
+}
+
+.title .logo {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
 }
