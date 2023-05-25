@@ -30,7 +30,6 @@ body {
     background: linear-gradient(to right, #ff4800 0%, #c92f32 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
     opacity: 0.87;
     margin: 1rem;
